@@ -8,6 +8,7 @@ from pathlib import Path
 
 # custom imports
 import fileClassDecleration
+import fileSortingOnExtension as EfileSort
 
 
 class CleaningUtility(fileClassDecleration.FileStructure):
@@ -92,7 +93,7 @@ class CleaningUtility(fileClassDecleration.FileStructure):
         print(message)
         exit(0)
 
-    def scanAndCleanSystem(self, file_count = 10):
+    def scanAndCleanSystem(self, file_count=10):
         scannedFileList = self.populateFileList(file_count)
 
         # printing the top sized files
@@ -160,22 +161,25 @@ class CleaningUtility(fileClassDecleration.FileStructure):
 
 
 if __name__ == '__main__':
+
     print("------------------------------------------------------------------------------------")
     optionFunctionality = input(
         "Option Available: \n 1. Scan FileSystem to save space \n 2. Sort Files(Based on Extension) \n 3. Exit \n\n Input: ")
 
+    # Creating a reference for the class
+    obj = CleaningUtility()
+
     if optionFunctionality == "1":
         fileCount = input("Enter the number of files to be displayed in result: ")
-        obj = CleaningUtility()
         obj.scanAndCleanSystem(int(fileCount))
 
     elif optionFunctionality == "2":
         sourceDirectory = input("Enter path for source directory: ")
         destinationDirectory = input("Enter path for destination directory: ")
 
-        print("Source: ", sourceDirectory)
-        print("Destination ", destinationDirectory)
+        EfileSort.sortOnExtension(sourceDirectory, destinationDirectory)
+
+        print(" Files Moved from '" + sourceDirectory + "' to '" + destinationDirectory + "' and sorted based on extension")
 
     else:
         CleaningUtility().sysError("Exiting the Script. ThankYou!")
-
