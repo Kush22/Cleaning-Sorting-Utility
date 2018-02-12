@@ -12,16 +12,12 @@ def findFileExtension(file_path):
 
 
 def sortOnExtension(sourceDirectory, destinationDirectory):
-    print("Here")
-    print(sourceDirectory)
 
     for root, directories, filenames in os.walk(sourceDirectory):
-        print("Here")
         for filename in filenames:
             source = os.path.abspath(os.path.join(root, filename))
 
             fileExtension = '/' + findFileExtension(source)
-            print(fileExtension)
 
             if not os.path.isdir(source):
                 if not os.path.isdir(destinationDirectory + fileExtension):
