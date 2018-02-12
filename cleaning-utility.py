@@ -160,6 +160,22 @@ class CleaningUtility(fileClassDecleration.FileStructure):
 
 
 if __name__ == '__main__':
-    fileCount = input("Enter the number of files to be displayed in result: ")
-    obj = CleaningUtility()
-    obj.scanAndCleanSystem(int(fileCount))
+    print("------------------------------------------------------------------------------------")
+    optionFunctionality = input(
+        "Option Available: \n 1. Scan FileSystem to save space \n 2. Sort Files(Based on Extension) \n 3. Exit \n\n Input: ")
+
+    if optionFunctionality == "1":
+        fileCount = input("Enter the number of files to be displayed in result: ")
+        obj = CleaningUtility()
+        obj.scanAndCleanSystem(int(fileCount))
+
+    elif optionFunctionality == "2":
+        sourceDirectory = input("Enter path for source directory: ")
+        destinationDirectory = input("Enter path for destination directory: ")
+
+        print("Source: ", sourceDirectory)
+        print("Destination ", destinationDirectory)
+
+    else:
+        CleaningUtility().sysError("Exiting the Script. ThankYou!")
+
