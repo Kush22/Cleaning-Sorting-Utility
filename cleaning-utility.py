@@ -11,7 +11,7 @@ import fileClassDecleration
 import fileSortingOnExtension as EfileSort
 
 
-class CleaningUtility(fileClassDecleration.FileStructure):
+class CleaningUtility:
 
     def __init__(self):
         self.username = getpass.getuser()
@@ -128,8 +128,9 @@ class CleaningUtility(fileClassDecleration.FileStructure):
             # Compress the file(s) provided and give an option to scan again
 
             self.printFileList(scannedFileList)
-            compressFileList = input(
-                'Enter the S.No of file(s) to be Compressed (separated by space). Original will be deleted)\n Input: ')
+            compressFileList = input('Enter the S.No of file(s) to be Compressed (separated by space). '
+                                     'Original will be deleted)\n '
+                                     'Input: ')
             compressFileList = compressFileList.split(' ')
 
             totalSavedSpace = 0
@@ -163,14 +164,19 @@ class CleaningUtility(fileClassDecleration.FileStructure):
 if __name__ == '__main__':
 
     print("------------------------------------------------------------------------------------")
-    optionFunctionality = input(
-        "Option Available: \n 1. Scan FileSystem to save space \n 2. Sort Files(Based on Extension) \n 3. Exit \n\n Input: ")
+    optionFunctionality = input("Option Available: "
+                                "\n 1. Scan FileSystem to save space "
+                                "\n 2. Sort Files(Based on Extension) "
+                                "\n 3. Exit "
+                                "\n\n Input: ")
 
     # Creating a reference for the class
     obj = CleaningUtility()
 
     if optionFunctionality == "1":
-        fileCount = input("Enter the number of files to be displayed in result: ")
+        fileCount = input("Enter the number of files to be displayed in result (Default 10): ")
+        if not fileCount:
+            fileCount = 10
         obj.scanAndCleanSystem(int(fileCount))
 
     elif optionFunctionality == "2":
@@ -179,7 +185,8 @@ if __name__ == '__main__':
 
         EfileSort.sortOnExtension(sourceDirectory, destinationDirectory)
 
-        print(" Files Moved from '" + sourceDirectory + "' to '" + destinationDirectory + "' and sorted based on extension")
+        print(" Files Moved from '" + sourceDirectory + "' to '"
+              + destinationDirectory + "' and sorted based on extension")
 
     else:
         CleaningUtility().sysError("Exiting the Script. ThankYou!")

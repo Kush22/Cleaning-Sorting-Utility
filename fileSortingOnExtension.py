@@ -3,6 +3,7 @@
 import os
 import shutil
 
+
 def findFileExtension(file_path):
     for ext in ['.tar.gz', '.tar.bz2']:
         if file_path.endswith(ext):
