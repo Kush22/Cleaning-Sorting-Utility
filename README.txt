@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+## Welcome to InnoCleaner
 
-You can use the [editor on GitHub](https://github.com/Kush22/Cleaning-Sorting-Utility/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is a Cleaning & File Sorting Utility which is developed by me as a submission for **Innovaccer HackerCamp 18** under the assignment title **Infrastructure Engineering Assignment**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The problem statement for the implemented project is: [Infrastructure Engineering Assignment](https://drive.google.com/file/d/1azvXBMhBmhiFRDDTR3cDegJUNTxvg3ak/view)
 
-### Markdown
+Now let us describe what the project is and what are its _functionality_
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+InnoCleaner is a UNIX based CLI cleaner utility that gives the user various functionality:
 
-```markdown
-Syntax highlighted code block
+* Scan and Save Space : Given the path and number of files to list, it can recursively scan the path to display the largest sized files(Further operations include):
+    * Delete file(s):
+        - For this choose the corresponding option and specify the file(s) (space separated if multiple)
+    * Compressing file(s):
+        - Similar to compression, specify the file(s) (space separated if multiple)
+    * Stats about the amount of space saved are then displayed.
 
-# Header 1
-## Header 2
-### Header 3
+* Sorting : Given the path of a _source_ and _destination_, the files in _source_ folder are sorted according to extension and saved folder-wise in the destination location
 
-- Bulleted
-- List
+* Duplicity : Given a path, InnoCleaner recursively scans the path for detecting duplicate files.
 
-1. Numbered
-2. List
+* Cleanup : On selecting the Cleanup Option, the temp files are cleaned.
 
-**Bold** and _Italic_ and `Code` text
+## Improvements
+No project is complete without a list of improvements & InnoCleaner is no exception. The list of improvements can be never ending:
 
-[Link](url) and ![Image](src)
-```
+* Some of the modules are python3 dependent. Provide backward compatibility to python 2 also (atleast from python 2.7)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* Right now the module is tested only for UNIX environments. Test and make the module cross-platform compatible.
 
-### Jekyll Themes
+* Separate compression algorithms work better with different types of files. So have a list of compression algos corresponding to the file extension
+  and by checking the file extension, use the best possible to save most space.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Kush22/Cleaning-Sorting-Utility/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* Just detecting duplicate files isn't of much use. So provide option to clean the duplicate files too. Since a lot of files may be duplicated, first display
+  only limited number of files, ask for any deletion and then proceed further. Also provide an option to clean all duplicate files (if the user does not want to select explicitly).
 
-### Support or Contact
+* Detection of Obsolete files : Based on the modified dates, obsolete files may be displayed to be cleaned up or compressed.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+-Contact
+In case of any query you can always contact me at my [email](kushagra.gupta@students.iiit.ac.in) and I will be happy to help.
+
+Happy Coding!
+
+Developer
+**Kushagra Gupta**
+
+
