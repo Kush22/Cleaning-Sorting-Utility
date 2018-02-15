@@ -3,12 +3,14 @@
 import os
 import getpass
 import zipfile
-from pathlib import Path
+import pathlib
 
 
 # custom imports
 import fileClassDecleration
 import fileSortingOnExtension as EfileSort
+import findDuplicateFIles as findDup
+import cleaningTempFiles as cleanTemp
 
 
 class CleaningUtility:
@@ -30,7 +32,7 @@ class CleaningUtility:
                 absFilePath = os.path.abspath(os.path.join(root, filename))
 
                 # Getting parent directory path to be saved in object of file-structure
-                parentFilePath = Path(absFilePath).parent
+                parentFilePath = pathlib.Path(absFilePath).parent
 
                 try:
                     fileSize = os.path.getsize(absFilePath)
@@ -92,6 +94,12 @@ class CleaningUtility:
     def sysError(self, message):
         print(message)
         exit(0)
+
+    def checkConfirmation(self, option):
+        if option == "YES" or option == "Yes" or option == "Y" or option == "y" or option == "yes":
+            return True
+        else:
+            return False
 
     def scanAndCleanSystem(self, file_count=10):
         scannedFileList = self.populateFileList(file_count)
@@ -155,7 +163,7 @@ class CleaningUtility:
             exit(0)
 
         continueOption = input("\nDo you want to scan again?(Y/N)\nInput: ")
-        if continueOption == "Y" or continueOption == "y" or continueOption == "Yes" or continueOption == "YES":
+        if obj.checkConfirmation(continueOption):
             self.scanAndCleanSystem(file_count)
         else:
             return
@@ -165,9 +173,11 @@ if __name__ == '__main__':
 
     print("------------------------------------------------------------------------------------")
     optionFunctionality = input("Option Available: "
-                                "\n 1. Scan FileSystem to save space "
-                                "\n 2. Sort Files(Based on Extension) "
-                                "\n 3. Exit "
+                                "\n 1. Scan FileSystem to save space"
+                                "\n 2. Sort Files(Based on Extension)"
+                                "\n 3. Find Duplicate Files"
+                                "\n 4. Clean the system up (Clearing Temp Files)"
+                                "\n 5. Exit "
                                 "\n\n Input: ")
 
     # Creating a reference for the class
@@ -188,5 +198,26 @@ if __name__ == '__main__':
         print(" Files Moved from '" + sourceDirectory + "' to '"
               + destinationDirectory + "' and sorted based on extension")
 
+    elif optionFunctionality == "3":
+        duplicateFilePath = input("Enter the path from which to find duplicate files"
+                                  "(Press Enter to scan full system)"
+                                  "\nInput: ")
+
+        # If no path provided, scan from the room directory
+        if not duplicateFilePath:
+            duplicateFilePath = obj.rootDirectory
+
+        findDup.findDuplicateFiles(duplicateFilePath)
+
+    elif optionFunctionality == "4":
+
+        confirmationForTempCleaning = input("Confirm to clean the temp files (Y/N)"
+                                            "\n Input: ")
+
+        if obj.checkConfirmation(confirmationForTempCleaning):
+            cleanTemp.cleanTempFile()
+        else:
+            pass
+
     else:
-        CleaningUtility().sysError("Exiting the Script. ThankYou!")
+        obj.sysError("Exiting the Script. ThankYou!")
