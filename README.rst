@@ -9,10 +9,21 @@ The problem statement for the implemented project is: `Infrastructure
 Engineering
 Assignment <https://drive.google.com/file/d/1azvXBMhBmhiFRDDTR3cDegJUNTxvg3ak/view>`__
 
-Now let us describe what the project is and what are its *functionality*
+**Required Functionality**
+==========================
 
-InnoCleaner is a UNIX based CLI cleaner utility that gives the user
-various functionality:
+-  Scan the specified path in the file system to display top 10 largest
+   sized files.
+-  Move the files on Desktop based on extension and save them in
+   Documents folder clubbed in folders according to extension.
+
+Now let us describe what InnoCleaner is:
+
+InnoCleaner is a UNIX based CLI cleaner utility that gives the user a
+tool to perform disk cleanup and related capabilities.
+
+**Functionality Implemented**
+=============================
 
 -  Scan and Save Space : Given the path and number of files to list, it
    can recursively scan the path to display the largest sized
@@ -40,8 +51,8 @@ various functionality:
 -  Cleanup : On selecting the Cleanup Option, the temp files are
    cleaned.
 
-Improvements
-============
+**Future Improvements**
+=======================
 
 No project is complete without a list of improvements & InnoCleaner is
 no exception. The list of improvements can be never ending:
@@ -66,10 +77,10 @@ no exception. The list of improvements can be never ending:
 -  Detection of Obsolete files : Based on the modified dates, obsolete
    files may be displayed to be cleaned up or compressed.
 
--Contact In case of any query you can always contact me at my
-`email <kushagra.gupta@students.iiit.ac.in>`__ and I will be happy to
-help.
+-Contact In case of any query you can always contact me at
+kushagra.gupta@students.iiit.ac.in and I will be happy to help.
 
 Happy Coding!
 
-Developer **Kushagra Gupta**
+Developer **Kushagra Gupta** IIIT Hyderabad Bakul Nivas, Gachibowli
+Hyderabad - 500032 Telangana, India
