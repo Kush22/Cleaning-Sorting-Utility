@@ -13,9 +13,9 @@ setup(
 
     name='InnoCleaner',
 
-    version='1.0.1.dev1',
+    version='1.0.3.dev1',
 
-    url='https://kush22.github.io/Cleaning-Sorting-Utility/',
+    url='https://github.com/Kush22/Cleaning-Sorting-Utility',
 
     license='MIT LICENSE',
 
@@ -34,6 +34,7 @@ setup(
         'License :: OSI Approved :: MIT License',
     ],
 
+    python_requires='>3',
 
     keywords='Cleaning Utility Python-Tools',
 
