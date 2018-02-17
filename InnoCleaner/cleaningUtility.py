@@ -295,9 +295,10 @@ class CleaningUtility:
                                                 "\n Input: ")
 
             if obj.checkConfirmation(confirmationForTempCleaning):
-                cleanTemp.cleanTempFile()
+                sizeCleaned = cleanTemp.cleanTempFile()
+                print("Temp files cleaned. Saved Space: " + sizeCleaned)
             else:
-                pass
+                print("Temp Files cleaning procedure aborted.")
 
             # Again displaying the menu for further options
             self.main()
