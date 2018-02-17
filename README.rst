@@ -2,12 +2,24 @@ Welcome to InnoCleaner
 ======================
 
 This is a Cleaning & File Sorting Utility which is developed by me as a
-submission for **Innovaccer HackerCamp 18** under the assignment title
-**Infrastructure Engineering Assignment**
+submission for **Innovaccer HackerCamp 18** under the assignment titled
+**Infrastructure Engineering Assignment.**
 
 The problem statement for the implemented project is: `Infrastructure
 Engineering
 Assignment <https://drive.google.com/file/d/1azvXBMhBmhiFRDDTR3cDegJUNTxvg3ak/view>`__
+
+**Installation**
+==========================
+
+To install just type in your terminal:
+pip install InnoCleaner
+
+**Requirements**
+==========================
+
+- Unix Platform
+- Python Installation with version > 3
 
 **Required Functionality**
 ==========================
@@ -58,29 +70,29 @@ No project is complete without a list of improvements & InnoCleaner is
 no exception. The list of improvements can be never ending:
 
 -  Some of the modules are python3 dependent. Provide backward
-   compatibility to python 2 also (atleast from python 2.7)
+   compatibility to python 2 also (atleast from python 2.7).
 
 -  Right now the module is tested only for UNIX environments. Test and
    make the module cross-platform compatible.
 
 -  Separate compression algorithms work better with different types of
-   files. So have a list of compression algos corresponding to the file
+   files. So have a list of compression algorithms corresponding to the file
    extension and by checking the file extension, use the best possible
    to save most space.
 
 -  Just detecting duplicate files isn't of much use. So provide option
    to clean the duplicate files too. Since a lot of files may be
    duplicated, first display only limited number of files, ask for any
-   deletion and then proceed further. Also provide an option to clean
+   deletion and then proceed further. Also, provide an option to clean
    all duplicate files (if the user does not want to select explicitly).
 
--  Detection of Obsolete files : Based on the modified dates, obsolete
+-  Detection of obsolete files : Based on the modified dates, obsolete
    files may be displayed to be cleaned up or compressed.
 
--Contact In case of any query you can always contact me at
+-Contact: In case of any query you can always contact me at
 kushagra.gupta@students.iiit.ac.in and I will be happy to help.
 
 Happy Coding!
 
-Developer **Kushagra Gupta** IIIT Hyderabad Bakul Nivas, Gachibowli
+Developer **Kushagra Gupta**, IIIT Hyderabad, Bakul Nivas, Gachibowli
 Hyderabad - 500032 Telangana, India
