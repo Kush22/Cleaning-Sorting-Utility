@@ -20,7 +20,7 @@ def findFileExtension(file_path):
 
 def sortOnExtension(sourceDirectory, destinationDirectory):
     """
-
+    Segregate files based on extension
     :param sourceDirectory: path containing the mixed files, whose files needs to be sorted
     :param destinationDirectory: destination where the sorted files need to be moved
     :return: Moves the files form the source directory to destination directory & sorts according to the extension

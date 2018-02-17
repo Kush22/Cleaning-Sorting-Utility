@@ -2,6 +2,7 @@
 
 # standard module imports
 import os
+import sys
 import getpass
 import zipfile
 import pathlib

@@ -41,6 +41,12 @@ def findDuplicateFiles(path_to_find_duplicate, hash_algo=hashlib.sha1):
 
             # getting full path
             absFilePath = os.path.join(root, filename)
+
+            # Checking for file_permission
+            accessPerm = os.access(absFilePath, os.R_OK)
+            if not accessPerm:
+                continue
+
             hashobj = hash_algo()
 
             # calculating hash of the file. To check for duplicate files
