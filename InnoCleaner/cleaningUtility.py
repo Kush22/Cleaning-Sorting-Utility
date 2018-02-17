@@ -252,7 +252,12 @@ class CleaningUtility:
 
         elif optionFunctionality == "2":
             sourceDirectory = input("Enter path for source directory: ")
+            while not sourceDirectory:
+                sourceDirectory = input("Enter path for source directory: ")
+
             destinationDirectory = input("Enter path for destination directory: ")
+            while not destinationDirectory:
+                destinationDirectory = input("Enter path for destination directory: ")
 
             EfileSort.sortOnExtension(sourceDirectory, destinationDirectory)
 
