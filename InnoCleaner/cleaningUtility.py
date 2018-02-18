@@ -5,7 +5,11 @@ import os
 import sys
 import getpass
 import zipfile
-import pathlib
+
+if sys.version_info < (3, 0):
+    sys.exit("Sorry, Python < 3 not supported for now")
+else:
+    import pathlib
 
 # custom imports
 from InnoCleaner import fileClassDecleration, findDuplicateFIles as findDup, cleaningTempFiles as cleanTemp, \
@@ -303,8 +307,12 @@ class CleaningUtility:
             # Again displaying the menu for further options
             self.main()
 
-        else:
+        elif optionFunctionality == "5":
             obj.sysError("Exiting the Script. ThankYou!")
+
+        else:
+            print("Invalid Option. Enter Again\n")
+            self.main()
 
 
 if __name__ == '__main__':
