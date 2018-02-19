@@ -24,14 +24,20 @@ def cleanTempFile():
     for root, directories, filenames in os.walk(tempDirectoryPath):
         for filename in filenames:
 
-            pathToTempFile = os.path.join(root, filename)
+            try:
+                pathToTempFile = os.path.join(root, filename)
 
-            # Calculating cleaned size stats
-            currentCleanSize = cleaningUtilityObj.getFileSize(pathToTempFile)
-            totalCleanedSize += currentCleanSize
+                if not os.path.isfile(pathToTempFile):
+                    continue
 
-            # Deleting the temp file
-            os.remove(pathToTempFile)
+                # Calculating cleaned size stats
+                currentCleanSize = cleaningUtilityObj.getFileSize(pathToTempFile)
+                totalCleanedSize += currentCleanSize
+
+                # Deleting the temp file
+                os.remove(pathToTempFile)
+            except IOError as _:
+                continue
 
     return totalCleanedSize
 
