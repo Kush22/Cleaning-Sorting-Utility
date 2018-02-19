@@ -9,7 +9,7 @@ import zipfile
 if sys.version_info < (3, 0):
     sys.exit("Sorry, Python < 3 not supported for now")
 else:
-    import pathlib
+    import pathlib2 as pathlib
 
 # custom imports
 from InnoCleaner import fileClassDecleration, findDuplicateFIles as findDup, cleaningTempFiles as cleanTemp, \
