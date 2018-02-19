@@ -300,7 +300,10 @@ class CleaningUtility:
             if not os.path.exists(duplicateFilePath):
                 obj.sysError("Enter valid path")
 
-            findDup.findDuplicateFiles(duplicateFilePath)
+            print("Scanning for duplicate file. This might take some time...")
+            sizeToBeSaved = findDup.findDuplicateFiles(duplicateFilePath)
+
+            print("You can save " + sizeToBeSaved + " space by cleaning duplicate files")
 
             # Again displaying the menu for further options
             self.main()
