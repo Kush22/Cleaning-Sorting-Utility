@@ -19,8 +19,8 @@ To Execute:
 
 In **normal user mode**:
     Command: InnoCleaner
--With **super-user privileges**:
-    -Command: sudo InnoCleaner
+With **super-user privileges**:
+    Command: sudo InnoCleaner
 
 **Requirements**
 ==========================
