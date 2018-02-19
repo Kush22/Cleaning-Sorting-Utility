@@ -21,12 +21,15 @@ def cleanTempFile():
     cleaningUtilityObj = cleaningUtility.CleaningUtility()
 
     totalCleanedSize = 0
+
+    # for each file in the temp directory
     for root, directories, filenames in os.walk(tempDirectoryPath):
         for filename in filenames:
 
             try:
                 pathToTempFile = os.path.join(root, filename)
 
+                # Check if valid file
                 if not os.path.isfile(pathToTempFile):
                     continue
 
@@ -39,6 +42,7 @@ def cleanTempFile():
             except IOError as _:
                 continue
 
+    # Return the amount of space that can be saved
     return totalCleanedSize
 
 
