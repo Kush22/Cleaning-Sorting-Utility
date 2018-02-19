@@ -12,14 +12,13 @@ Assignment <https://drive.google.com/file/d/1azvXBMhBmhiFRDDTR3cDegJUNTxvg3ak/vi
 **Installation**
 ==========================
 
-To install just type in your terminal:
+To install run the command:
 pip install InnoCleaner
 
-Then type (on terminal):
-
--To run in normal user mode
+To Execute:
+-In normal user mode
     - Command: InnoCleaner
--To run the with super user privileges.
+-With super user privileges
     - Command: sudo InnoCleaner
 
 **Requirements**
@@ -74,9 +73,9 @@ tool to perform disk cleanup and related capabilities.
 =============================
 
 -  After displaying the scanned files, when you choose the options to delete/compress, again the list of
-   files will be displayed from which you have to choose the appropriate files.
+   files will be displayed from which you can choose the files to perform the required action on.
 
--  If using python < 3, specify the path to directories and space separated options in double quotes
+-  If using python version < 3, specify the path to directories and space separated options in double quotes
    e.g. ("/home/user_name/").
 
 -  For cleaning temp files run the program in Super User mode, because normal user does not have permission
