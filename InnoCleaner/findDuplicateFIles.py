@@ -35,12 +35,17 @@ def findDuplicateFiles(path_to_find_duplicate, hash_algo=hashlib.sha1):
 
     # List which stores duplicate files
     duplicateFiles = []
+    totalSize = 0
 
     for root, directories, filenames in os.walk(path_to_find_duplicate):
         for filename in filenames:
 
             # getting full path
             absFilePath = os.path.join(root, filename)
+
+            # Check if (valid) file exists
+            if not os.path.isfile(absFilePath):
+                continue
 
             # Checking for file_permission
             accessPerm = os.access(absFilePath, os.R_OK)
@@ -56,16 +61,19 @@ def findDuplicateFiles(path_to_find_duplicate, hash_algo=hashlib.sha1):
             except IOError as _:
                 continue
 
-            # cheating a fileID, which is based on the hash of the contents of the file and the filesize
+            # creating a fileID, which is based on the hash of the contents of the file and the filesize
             fileID = (hashobj.digest(), os.path.getsize(absFilePath))
 
             # Check if duplicate file present
             duplicateFile = hashList.get(fileID, None)
             if duplicateFile:
                 print("Duplicate found: %s and %s" % (absFilePath, duplicateFile))
+                totalSize += os.path.getsize(duplicateFile)
                 duplicateFiles.append(absFilePath)
             else:
                 hashList[fileID] = absFilePath
+
+    return totalSize
 
 
 if __name__ == '__main__':
