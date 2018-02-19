@@ -19,7 +19,7 @@ pip install InnoCleaner
 ==========================
 
 - Unix Platform
-- Python Installation with version > 3
+- Python Installation with version >= 2.7
 
 **Required Functionality**
 ==========================
