@@ -16,9 +16,10 @@ To install just type in your terminal:
 pip install InnoCleaner
 
 Then type (on terminal):
+
 -To run in normal user mode
     - Command: InnoCleaner
-To run the with super user privileges.
+-To run the with super user privileges.
     - Command: sudo InnoCleaner
 
 **Requirements**
