@@ -50,8 +50,11 @@ def findDuplicateFiles(path_to_find_duplicate, hash_algo=hashlib.sha1):
             hashobj = hash_algo()
 
             # calculating hash of the file. To check for duplicate files
-            for chunk in chunkReader(open(absFilePath, 'rb')):
-                hashobj.update(chunk)
+            try:
+                for chunk in chunkReader(open(absFilePath, 'rb')):
+                    hashobj.update(chunk)
+            except IOError as _:
+                continue
 
             # cheating a fileID, which is based on the hash of the contents of the file and the filesize
             fileID = (hashobj.digest(), os.path.getsize(absFilePath))
