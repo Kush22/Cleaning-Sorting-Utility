@@ -11,7 +11,7 @@ def cleanTempFile():
     """
 
     Gets the tempfiles and deletes them
-    :return: Temp files removed
+    :return: Temp files removed and amount of space saved
     """
 
     # Getting the temp-file directory using tempfile module
