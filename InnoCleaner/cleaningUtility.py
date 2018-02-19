@@ -8,7 +8,7 @@ import zipfile
 import pathlib2 as pathlib
 
 # custom imports
-from InnoCleaner import fileClassDecleration, findDuplicateFIles as findDup, cleaningTempFiles as cleanTemp, \
+import fileClassDecleration, findDuplicateFIles as findDup, cleaningTempFiles as cleanTemp, \
     fileSortingOnExtension as EfileSort
 
 
@@ -159,12 +159,20 @@ class CleaningUtility:
             "Option Available: \n 1. Delete File(s) \n 2. Compress File(s)"
             "\n 3. Main Menu \n 4. Exit \n\n Input: ")
 
+        if not optionCompressDelete:
+            self.scanAndCleanSystem(scan_path, file_count)
+
+        optionCompressDelete = str(optionCompressDelete)
+
         # Delete file
         if optionCompressDelete == "1":
             # Delete the file(s) provided and give an option to scan again
 
             self.printFileList(scannedFileList)
             deleteFileList = input("Enter the S.No of file(s) to be deleted (separated by space)\n Input: ")
+
+            deleteFileList = str(deleteFileList)
+
             deleteFileList = deleteFileList.split(' ')
 
             totalSavedSpace = 0
@@ -189,6 +197,9 @@ class CleaningUtility:
             compressFileList = input('Enter the S.No of file(s) to be Compressed (separated by space). '
                                      'Original will be deleted)\n '
                                      'Input: ')
+
+            compressFileList = str(compressFileList)
+
             compressFileList = compressFileList.split(' ')
 
             totalSavedSpace = 0
@@ -225,6 +236,9 @@ class CleaningUtility:
         :return: None
         """
 
+        # Creating a reference for the class
+        obj = CleaningUtility()
+
         print("\n------------------------------------------------------------------------------------")
         optionFunctionality = input("Option Available: "
                                     "\n 1. Scan FileSystem to save space"
@@ -233,9 +247,10 @@ class CleaningUtility:
                                     "\n 4. Clean the system up (Clearing Temp Files)"
                                     "\n 5. Exit "
                                     "\n\n Input: ")
+        if not optionFunctionality:
+            obj.main()
 
-        # Creating a reference for the class
-        obj = CleaningUtility()
+        optionFunctionality = str(optionFunctionality)
 
         if optionFunctionality == "1":
             fileCount = input("Enter the number of files to be displayed in result (Default 10): ")
@@ -244,9 +259,11 @@ class CleaningUtility:
             print("This might take some time. Scanning...")
 
             if not scanPath:
-                scanPath = self.rootDirectory
+                scanPath = str(self.rootDirectory)
             if not fileCount:
                 fileCount = 10
+
+            scanPath = str(scanPath)
 
             obj.scanAndCleanSystem(scanPath, int(fileCount))
 
@@ -254,10 +271,12 @@ class CleaningUtility:
             sourceDirectory = input("Enter path for source directory: ")
             while not sourceDirectory:
                 sourceDirectory = input("Enter path for source directory: ")
+            sourceDirectory = str(sourceDirectory)
 
             destinationDirectory = input("Enter path for destination directory: ")
             while not destinationDirectory:
                 destinationDirectory = input("Enter path for destination directory: ")
+            destinationDirectory = str(destinationDirectory)
 
             EfileSort.sortOnExtension(sourceDirectory, destinationDirectory)
 
@@ -275,6 +294,7 @@ class CleaningUtility:
             # If no path provided, scan from the room directory
             if not duplicateFilePath:
                 duplicateFilePath = obj.rootDirectory
+            duplicateFilePath = str(duplicateFilePath)
 
             # Check if the path exists or not
             if not os.path.exists(duplicateFilePath):
@@ -293,6 +313,7 @@ class CleaningUtility:
 
             confirmationForTempCleaning = input("Confirm to clean the temp files (Y/N)"
                                                 "\n Input: ")
+            confirmationForTempCleaning = str(confirmationForTempCleaning)
 
             if obj.checkConfirmation(confirmationForTempCleaning):
                 sizeCleaned = cleanTemp.cleanTempFile()
