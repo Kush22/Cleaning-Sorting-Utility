@@ -13,7 +13,7 @@ setup(
 
     name='InnoCleaner',
 
-    version='1.0.4.dev1',
+    version='1.0.6.dev1',
 
     url='https://github.com/Kush22/Cleaning-Sorting-Utility',
 
@@ -39,6 +39,8 @@ setup(
     keywords='Cleaning Utility Python-Tools',
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+
+    install_requires=['pathlib2'],
 
     entry_points={
         'console_scripts': [
