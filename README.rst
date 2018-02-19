@@ -69,9 +69,6 @@ tool to perform disk cleanup and related capabilities.
 No project is complete without a list of improvements & InnoCleaner is
 no exception. The list of improvements can be never ending:
 
--  Some of the modules are python3 dependent. Provide backward
-   compatibility to python 2 also (atleast from python 2.7).
-
 -  Right now the module is tested only for UNIX environments. Test and
    make the module cross-platform compatible.
 
