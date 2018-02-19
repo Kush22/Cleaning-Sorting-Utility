@@ -13,7 +13,7 @@ setup(
 
     name='InnoCleaner',
 
-    version='1.0.6.dev1',
+    version='1.0.7.dev1',
 
     url='https://github.com/Kush22/Cleaning-Sorting-Utility',
 
