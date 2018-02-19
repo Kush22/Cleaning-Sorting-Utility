@@ -13,7 +13,7 @@ setup(
 
     name='InnoCleaner',
 
-    version='1.0.7.dev1',
+    version='1.0.17.dev1',
 
     url='https://github.com/Kush22/Cleaning-Sorting-Utility',
 
@@ -32,9 +32,12 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
-
-    python_requires='>3',
 
     keywords='Cleaning Utility Python-Tools',
 
@@ -42,10 +45,11 @@ setup(
 
     install_requires=['pathlib2'],
 
+    python_requires='>2.7',
+
     entry_points={
         'console_scripts': [
-            'InnoCleaner=InnoCleaner:main'
+            'InnoCleaner=InnoCleaner:main',
         ],
     },
-
 )
