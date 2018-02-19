@@ -4,7 +4,7 @@ import os
 import tempfile
 
 # Custom Imports
-from InnoCleaner import cleaningUtility
+import cleaningUtility
 
 
 def cleanTempFile():
