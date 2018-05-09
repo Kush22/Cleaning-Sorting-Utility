@@ -1,13 +1,7 @@
 Welcome to InnoCleaner
 ======================
 
-This is a Cleaning & File Sorting Utility which is developed by me as a
-submission for **Innovaccer HackerCamp 18** under the assignment titled
-**Infrastructure Engineering Assignment.**
-
-The problem statement for the implemented project is: `Infrastructure
-Engineering
-Assignment <https://drive.google.com/file/d/1azvXBMhBmhiFRDDTR3cDegJUNTxvg3ak/view>`__
+This is a Cleaning & File Sorting Utility which can be used to clean up your unix based PC and also provide functionalities to group files based on extentions.
 
 **Installation**
 ==========================
@@ -27,14 +21,6 @@ With **super-user privileges**:
 
 - Unix Platform
 - Python Installation with version >= 2.7
-
-**Required Functionality**
-==========================
-
--  Scan the specified path in the file system to display top 10 largest
-   sized files.
--  Move the files on Desktop based on extension and save them in
-   Documents folder clubbed in folders according to extension.
 
 Now let us describe what InnoCleaner is:
 
